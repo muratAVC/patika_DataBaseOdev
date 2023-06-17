@@ -23,3 +23,15 @@ SELECT * from film where title like '%n' order by length ASC offset 5 limit 5;
 --customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada
 -- store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
 SELECT * from customer where store_id=1 order by last_name DESC limit 4;
+
+
+--ödev6
+--film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
+SELECT avg(rental_rate) from film;
+--film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
+SELECT  count(title) from film where title like 'A%';
+--film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
+SELECT max(length) from film where rental_rate=0.99;
+--film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır
+SELECT count(distinct replacement_cost) from film where length>150;
+
