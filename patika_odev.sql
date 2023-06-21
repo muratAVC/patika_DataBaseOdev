@@ -151,3 +151,13 @@ DELETE from employee where id=60;
 
 SELECT * from employee;
 --------------------------------------------------------------------------------------------
+
+--ödev 9
+--city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+SELECT a.city,c.country from city a inner join country c on a.country_id = c.country_id;
+--customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+SELECT p.payment_id,c.first_name,c.last_name from customer c inner join payment p on c.customer_id = p.customer_id;
+--customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+SELECT r.rental_id,c.first_name,c.last_name from customer c inner join rental r on c.customer_id = r.customer_id;
+
+---------------------------------------------------------------
