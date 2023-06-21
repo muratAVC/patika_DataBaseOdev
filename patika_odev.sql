@@ -169,3 +169,35 @@ SELECT c.country,a.city from city a left join country c on a.country_id = c.coun
 SELECT p.payment_id,c.first_name,c.last_name from customer c right join payment p on c.customer_id = p.customer_id;
 --customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız.
 SELECT r.rental_id,c.first_name,c.last_name from customer c full join rental r on c.customer_id = r.customer_id;
+
+-----------------------------------------------------------------
+--ödev 11
+--actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
+(SELECT first_name from actor)
+union
+(SELECT first_name from customer);
+--actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
+(SELECT first_name from actor )
+intersect
+(SELECT first_name from customer);
+
+--actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım.
+(SELECT first_name from actor)
+except
+(SELECT first_name from customer);
+
+SELECT first_name from actor where first_name='Bela';--Kontrol için
+
+
+--İlk 3 sorguyu tekrar eden veriler için de yapalım.
+(SELECT first_name from actor)
+union all
+(SELECT first_name from customer);
+
+(SELECT first_name from actor )
+intersect all
+(SELECT first_name from customer);
+
+(SELECT first_name from actor)
+except all
+(SELECT first_name from customer);
